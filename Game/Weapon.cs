@@ -3,18 +3,18 @@ namespace Game;
 public class Weapon
 {
     public int ID;
-    public string name;
-    public string plural;
-    public int value1;
-    public int value2;
+    public string Name;
+    public string NamePlural;
+    public int MinimumDamage;
+    public int MaximumDamage;
 
     public Weapon(int weapon_id, string name, string plural, int value1, int value2)
     {
         this.ID = weapon_id;
-        this.name = name;
-        this.plural = plural;
-        this.value1 = value1;
-        this.value2 = value2;
+        this.Name = name;
+        this.NamePlural = plural;
+        this.MinimumDamage = value1;
+        this.MaximumDamage = value2;
         
     }
     
