@@ -2,7 +2,7 @@ namespace Game;
 
 public class Location
 {
-    public int ID;
+    public int Id;
     public string Name;
     public string Description;
     public Item ItemRequiredToEnter;
@@ -12,10 +12,10 @@ public class Location
     public Location LocationToSouth;
     public Location LocationToWest;
 
-    public Location(int ID, string name, string description, Item itemRequiredToEnter, Quest questAvailableHere,
+    public Location(int id, string name, string description, Item itemRequiredToEnter, Quest questAvailableHere,
         Location locationToNorth, Location locationToEast, Location locationToSouth, Location locationToWest)
     {
-        this.ID = ID;
+        this.Id = id;
         this.Name = name;
         this.Description = description;
         this.ItemRequiredToEnter = itemRequiredToEnter;
