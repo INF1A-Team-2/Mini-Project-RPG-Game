@@ -1,4 +1,6 @@
-﻿public class Program
+﻿namespace Game;
+
+public class Program
 {
     
 }
