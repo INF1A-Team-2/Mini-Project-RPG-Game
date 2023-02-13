@@ -12,8 +12,8 @@ public class Location
     public Location LocationToSouth;
     public Location LocationToWest;
 
-    public Location(int id, string name, string description, Item itemRequiredToEnter, Quest questAvailableHere,
-        Location locationToNorth, Location locationToEast, Location locationToSouth, Location locationToWest)
+    public Location(int id, string name, string description, Item itemRequiredToEnter = null, Quest questAvailableHere = null,
+        Location locationToNorth = null, Location locationToEast = null, Location locationToSouth = null, Location locationToWest = null)
     {
         this.Id = id;
         this.Name = name;
