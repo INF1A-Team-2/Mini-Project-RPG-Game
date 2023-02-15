@@ -8,10 +8,10 @@ class Item
     this.Name = name;
     this.PluralName = pluralName;
 
-    public Item(int id, string name, string pluralName)
+    public Item(int id, string namee, string pluralName)
     {
         ID = id;
-        Name = name;
+        Name = namee;
         PluralName = pluralName;
     }
 }
