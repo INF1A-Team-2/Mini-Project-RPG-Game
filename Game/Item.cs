@@ -6,10 +6,10 @@ class Item
     public string Name;
     public string PluralName;
 
-    public Item(int id, string namee, string pluralName)
+    public Item(int id, string name, string pluralName)
     {
         this.ID = id;
-        this.Name = namee;
+        this.Name = name;
         this.PluralName = pluralName;
     }
 }
