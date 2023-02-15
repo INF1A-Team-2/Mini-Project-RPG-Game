@@ -1,6 +1,6 @@
 namespace Game;
 
-public class Quest
+class Quest
 {
     public int ID;
 

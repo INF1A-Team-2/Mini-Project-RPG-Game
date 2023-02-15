@@ -1,6 +1,6 @@
 namespace Game;
 
-public class Weapon
+class Weapon
 {
     public int ID;
     public string Name;

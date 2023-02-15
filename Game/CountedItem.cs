@@ -1,6 +1,6 @@
 namespace Game;
 
-public class CountedItem
+class CountedItem
 {
     public Item Item;
     public int Quantity;

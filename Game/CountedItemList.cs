@@ -1,6 +1,6 @@
 namespace Game;
 
-public class CountedItemList
+class CountedItemList
 {
     public List<CountedItem> ItemList = new List<CountedItem>();
 

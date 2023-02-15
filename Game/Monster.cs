@@ -1,6 +1,6 @@
 namespace Game;
 
-public class Monster
+class Monster
 {
   public int ID;
   public string Name;

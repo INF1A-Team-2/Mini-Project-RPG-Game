@@ -1,6 +1,6 @@
 namespace Game;
 
-public class SuperAdventure
+class SuperAdventure
 {
     public Player Player = new Player();
     public Monster CurrentMonster;

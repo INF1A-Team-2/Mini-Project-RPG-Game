@@ -1,6 +1,6 @@
 namespace Game;
 
-public class Location
+class Location
 {
     public int ID;
     public string Name;

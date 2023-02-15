@@ -1,6 +1,6 @@
 namespace Game;
 
-public static class World
+static class World
 {
     public static readonly List<Item> Items = new List<Item>();
     public static readonly List<Weapon> Weapons = new List<Weapon>();

@@ -1,6 +1,6 @@
 namespace Game;
 
-public class PlayerQuest
+class PlayerQuest
 {
     public Quest Quest;
     public bool IsCompleted = false;
