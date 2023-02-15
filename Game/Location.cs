@@ -7,22 +7,20 @@ class Location
     public string Description;
     public Item ItemRequiredToEnter;
     public Quest QuestAvailableHere;
-    public Location LocationToNorth;
-    public Location LocationToEast;
-    public Location LocationToSouth;
-    public Location LocationToWest;
+    public Monster MonsterLivingHere;
+    public Location LocationToNorth = null;
+    public Location LocationToEast = null;
+    public Location LocationToSouth = null;
+    public Location LocationToWest = null;
 
     public Location(int id, string name, string description, Item itemRequiredToEnter = null, Quest questAvailableHere = null,
-        Location locationToNorth = null, Location locationToEast = null, Location locationToSouth = null, Location locationToWest = null)
+        Monster monsterLivingHere = null)
     {
         this.ID = id;
         this.Name = name;
         this.Description = description;
         this.ItemRequiredToEnter = itemRequiredToEnter;
         this.QuestAvailableHere = questAvailableHere;
-        this.LocationToNorth = locationToNorth;
-        this.LocationToEast = locationToEast;
-        this.LocationToSouth = locationToSouth;
-        this.LocationToWest = locationToWest;
+        this.MonsterLivingHere = monsterLivingHere;
     }
 }

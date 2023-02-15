@@ -2,28 +2,25 @@ namespace Game;
 
 class Monster
 {
-  public int ID;
-  public string Name;
-  public string NamePlural;
-  public int MaximumDamage;
-  public int RewardExperience;
-  public int RewardGold;
-  public Loot CountedItemList;
-  public int CurrentHitPoints;
+    public int ID;
+    public string Name;
+    public string NamePlural;
+    public int MaximumDamage;
+    public int RewardExperience;
+    public int RewardGold;
+    public CountedItemList Loot = new CountedItemList();
+    public int CurrentHitPoints;
+    public int MaximumHitPoints;
 
-
-  public Monster(int id, string name, string nameplural, int maximumdamage, int rewardexperience, int rewardgold, Loot counteditemlist, int currenthitpoints) //constructor?
-  {
-    //put constructor code here
-    this.ID = id;
-    this.Name = name;
-    this.NamePlural = nameplural;
-    this.MaximumDamage = maximumdamage;
-    this.RewardExperience = rewardexperience;
-    this.RewardGold = rewardgold;
-    this.CountedItemList = counteditemlist;
-    this.CurrentHitPoints = currenthitpoints;
-  
-  }
-
+    public Monster(int id, string name, string namePlural, int maximumDamage, int rewardExperience, int rewardGold, int currentHitPoints, int maximumHitPoints)
+    {
+        this.ID = id;
+        this.Name = name;
+        this.NamePlural = namePlural;
+        this.MaximumDamage = maximumDamage;
+        this.RewardExperience = rewardExperience;
+        this.RewardGold = rewardGold;
+        this.CurrentHitPoints = currentHitPoints;
+        this.MaximumHitPoints = maximumHitPoints;
+    }
 }

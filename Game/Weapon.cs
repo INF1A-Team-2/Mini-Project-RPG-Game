@@ -8,13 +8,13 @@ class Weapon
     public int MinimumDamage;
     public int MaximumDamage;
 
-    public Weapon(int weapon_id, string name, string plural, int minimumdamage, int maximumdamage)
+    public Weapon(int id, string name, string namePlural, int minimumDamage, int maximumDamage)
     {
-        this.ID = weapon_id;
+        this.ID = id;
         this.Name = name;
-        this.NamePlural = plural;
-        this.MinimumDamage = minimumdamage;
-        this.MaximumDamage = maximumdamage;
+        this.NamePlural = namePlural;
+        this.MinimumDamage = minimumDamage;
+        this.MaximumDamage = maximumDamage;
         
     }
     
