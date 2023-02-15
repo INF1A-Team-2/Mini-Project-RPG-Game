@@ -1,4 +1,23 @@
 # Mini-Project-RPG-Game
 
-### Class Diagram
-![Class Diagram](https://raw.githubusercontent.com/INF1A-Team-2/Mini-Project-RPG-Game/main/.github/Class%20Diagram.png?raw=true)
+## Classes
+### Player
+**string** Name    
+**int** Health    
+**Location** CurrentLocation    
+**List<PlayerQuest>** QuestLog    
+**List<CountedItem>** Inventory    
+
+### Item
+**int** ID    
+**string** Name    
+**string** NamePlural    
+
+### Weapon
+**int** ID    
+**string** Name    
+**string** NamePlural   
+**int** MinimumDamage    
+**int** MaximumDamage    
+
+### Location
