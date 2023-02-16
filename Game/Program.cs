@@ -17,6 +17,11 @@ static class Program
     public static void GameLoop()
     {
         Movement.DoMovement();
+
+        if (Player.CurrentLocation.ItemRequiredToEnter != null)
+        {
+            // check if the player has the item
+        }
         
         GameLoop();
     }
