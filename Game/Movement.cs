@@ -2,13 +2,13 @@
 
 class Movement
 {
-    public void DoMovement(Player player)
+    public void DoMovement()
     {
         Console.WriteLine("Where do you want to go? (N/E/S/W)");
         string direction = Console.ReadLine().ToUpper();
-        TryMoveTo(player.CurrentLocation.GetLocationAt(direction));
-        Console.WriteLine("Current location: " + player.CurrentLocation.Name);
-        Console.WriteLine(player.CurrentLocation.Compass());
+        TryMoveTo(Program.player.CurrentLocation.GetLocationAt(direction));
+        Console.WriteLine("Current location: " + Program.player.CurrentLocation.Name);
+        Console.WriteLine(Program.player.CurrentLocation.Compass());
     }
     
     public bool TryMoveTo(Location newLocation)
