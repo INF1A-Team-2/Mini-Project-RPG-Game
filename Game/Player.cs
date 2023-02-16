@@ -20,4 +20,15 @@ class Player
         this.MaximumHitPoints = maximumHitPoints;
         this.CurrentLocation = currentLocation;
     }
+
+    public void QuestLogViewer()
+    {
+        foreach (var quest in QuestLog)
+        {
+            Console.WriteLine($"Quest: {quest.Quest.Name}");
+            Console.WriteLine($"Description: {quest.Quest.Description}");
+            Console.WriteLine("Quest completed: " + quest.IsCompleted);
+            Console.WriteLine();
+        }
+    }
 }
