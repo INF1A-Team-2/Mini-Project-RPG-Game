@@ -10,6 +10,8 @@ static class Program
         string name = Console.ReadLine() ?? "Player";
 
         Player = new Player(name, 10, 10, World.LocationByID(World.LOCATION_ID_HOME));
+
+        GameLoop();
     }
 
     public static void GameLoop()

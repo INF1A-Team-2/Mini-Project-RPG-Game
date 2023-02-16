@@ -1,21 +1,21 @@
 ﻿namespace Game;
 
-class Movement
+static class Movement
 {
-    public void DoMovement()
+    public static void DoMovement()
     {
         Console.WriteLine("Where do you want to go? (N/E/S/W)");
-        string direction = Console.ReadLine().ToUpper();
-        TryMoveTo(Program.player.CurrentLocation.GetLocationAt(direction));
-        Console.WriteLine("Current location: " + Program.player.CurrentLocation.Name);
-        Console.WriteLine(Program.player.CurrentLocation.Compass());
+        string direction = (Console.ReadLine() ?? "").ToUpper();
+        TryMoveTo(Program.Player.CurrentLocation.GetLocationAt(direction));
+        Console.WriteLine("Current location: " + Program.Player.CurrentLocation.Name);
+        Console.WriteLine(Program.Player.CurrentLocation.Compass());
     }
     
-    public bool TryMoveTo(Location newLocation)
+    public static bool TryMoveTo(Location newLocation)
     {
         if (newLocation != null)
         {
-            Program.player.CurrentLocation = newLocation;
+            Program.Player.CurrentLocation = newLocation;
             return true;
         }
         return false;
