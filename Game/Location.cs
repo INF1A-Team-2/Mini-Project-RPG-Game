@@ -74,18 +74,3 @@ class Location
         return compass;
     }
 }
-
-Player player = new Player("John Doe", 10, 100, World.Locations[0]); //Creates a Player object and puts him at Location 1
-Console.WriteLine("Current location: " + player.CurrentLocation.Name);
-Console.WriteLine(player.CurrentLocation.Compass()); //Can be used to see the movement options
-
-
-//while (player.CurrentLocation.Name != "Goal")
-while (true)
-{
-    Console.WriteLine("Where do you want to go? (N/E/S/W)");
-    string direction = Console.ReadLine().ToUpper();
-    player.TryMoveTo(player.CurrentLocation.GetLocationAt(direction));
-    Console.WriteLine("Current location: " + player.CurrentLocation.Name);
-    Console.WriteLine(player.CurrentLocation.Compass());
-}

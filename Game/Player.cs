@@ -20,14 +20,4 @@ class Player
         this.MaximumHitPoints = maximumHitPoints;
         this.CurrentLocation = currentLocation;
     }
-    
-    public bool TryMoveTo(Location newLocation)
-    {
-        if (newLocation != null)
-        {
-            CurrentLocation = newLocation;
-            return true;
-        }
-        return false;
-    }
 }
