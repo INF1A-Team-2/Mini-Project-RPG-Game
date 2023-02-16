@@ -8,6 +8,7 @@ static class Movement
         string direction = (Console.ReadLine() ?? "").ToUpper();
         TryMoveTo(Program.Player.CurrentLocation.GetLocationAt(direction));
         Console.WriteLine("Current location: " + Program.Player.CurrentLocation.Name);
+        Console.WriteLine(Program.Player.CurrentLocation.Description);
         Console.WriteLine(Program.Player.CurrentLocation.Compass());
     }
     
