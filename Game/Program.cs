@@ -36,6 +36,7 @@ static class Program
         switch (input)
         {
             case 1:
+                Player.QuestLogViewer();
                 break;
             
             case 2:
