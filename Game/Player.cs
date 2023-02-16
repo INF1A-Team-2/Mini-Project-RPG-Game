@@ -12,6 +12,7 @@ class Player
     public Location CurrentLocation;
     public CountedItemList Inventory = new CountedItemList();
     public List<PlayerQuest> QuestLog = new List<PlayerQuest>();
+    public int Healthpoints = 100;
 
     public Player(string name, int currentHitPoints, int maximumHitPoints, Location currentLocation)
     {
