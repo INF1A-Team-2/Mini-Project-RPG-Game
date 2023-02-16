@@ -16,13 +16,43 @@ static class Program
 
     public static void GameLoop()
     {
-        Movement.DoMovement();
+        Console.WriteLine("What do you want to do?");
+        Console.WriteLine("1: View quest log");
+        Console.WriteLine("2: View inventory");
+        Console.WriteLine("3: Move");
+        Console.WriteLine("4: Quit");
 
-        if (Player.CurrentLocation.ItemRequiredToEnter != null)
+        int input;
+        try
         {
-            // check if the player has the item
+            input = int.Parse(Console.ReadLine() ?? "0");
         }
-        
+        catch
+        {
+            GameLoop();
+            return;
+        }
+
+        switch (input)
+        {
+            case 1:
+                break;
+            
+            case 2:
+                break;
+            
+            case 3:
+                Movement.DoMovement();
+                break;
+                
+            case 4:
+                return;
+            
+            default:
+                GameLoop();
+                return;
+        }
+
         GameLoop();
     }
 }
