@@ -11,12 +11,12 @@ class Inventory
         {
             if (countedItem.Quantity == 1)
             {
-                Console.WriteLine($"{countedItem.Quantity} {Item.Name}/n");
+                Console.WriteLine($"{countedItem.Quantity} {countedItem.Item.Name}/n");
             }
 
             if (countedItem.Quantity >= 1)
             {
-                Console.WriteLine($"{countedItem.Quantity} {Item.PluralName}/n");
+                Console.WriteLine($"{countedItem.Quantity} {countedItem.Item.PluralName}/n");
             }
 
         }
