@@ -56,7 +56,7 @@ static class Fighting
             
             if (player.CurrentHitPoints <= 0)
             {
-                Console.WriteLine($"You were defeated by the {monster}, you're dead");
+                Console.WriteLine($"You were defeated by the {monster.Name}, you're dead");
                 break;
             }
             

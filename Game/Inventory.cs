@@ -24,9 +24,4 @@ class Inventory
         }
 
     }
-
-
-
-
-
 }
