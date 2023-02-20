@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace Game;
 
 class Quest
@@ -25,5 +27,9 @@ class Quest
         this.RewardGold = rewardGold;
         this.RewardItem = rewardItem;
         this.RewardWeapon = rewardWeapon;
+    }
+    public void ShowDialog()
+    {
+        Console.WriteLine($"There is a quest available: {Name}\n{Description}");
     }
 }
