@@ -40,10 +40,12 @@ static class Program
                 break;
             
             case 2:
+                Player.Inventory.DisplayItems();
                 break;
             
             case 3:
                 Movement.DoMovement();
+                Player.CurrentLocation.QuestAvailableHere?.ShowDialog();
                 break;
                 
             case 4:
