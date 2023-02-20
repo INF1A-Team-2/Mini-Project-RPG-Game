@@ -11,7 +11,7 @@ static class Fighting
         while (FightingCurrently)
         {
             Console.WriteLine($"You stand face to face with a {monster.Name}");
-            Encounter(player, monster);
+            Encounter(monster);
             Console.WriteLine("Do you wish to continue fighting\n1)yes\n2)no");
             switch (Console.ReadLine())
             {
@@ -29,8 +29,9 @@ static class Fighting
     }
 
 
-    static void Encounter(Player player, Monster monster)
+    static void Encounter(Monster monster)
     {
+        Player player = Program.Player;
         
         while (true)
         {
@@ -41,9 +42,9 @@ static class Fighting
             if (monster.CurrentHitPoints <= 0)
             {
                 Console.WriteLine($"You have defeated the {monster.Name}");
-                Item dropp = monster.Loot.Items[World.RandomGenerator.Next(0, monster.Loot.Items.Count)].Item;
-                Console.WriteLine($"it dropped {dropp.Name}");
-                player.Inventory.AddItem(dropp );
+                Item drop = monster.Loot.Items[World.RandomGenerator.Next(0, monster.Loot.Items.Count)].Item;
+                Console.WriteLine($"it dropped {drop.Name}");
+                player.Inventory.Items.AddItem(drop);
                 break;
             }
             Console.WriteLine($"You deal {dealt} damage to the {monster.Name}, they have {monster.CurrentHitPoints} Hp left");

@@ -1,7 +1,7 @@
 namespace Game;
 class Inventory
 {
-    CountedItemList  Items = new CountedItemList();
+    public CountedItemList Items = new CountedItemList();
 
     public void DisplayItems()
     {
