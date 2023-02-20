@@ -22,7 +22,7 @@ static class Program
             return;
         }
         
-        Console.WriteLine("What do you want to do?");
+        Console.WriteLine("\nWhat do you want to do?");
         Console.WriteLine("1: View quest log");
         Console.WriteLine("2: View inventory");
         Console.WriteLine("3: Move");
