@@ -10,7 +10,7 @@ class Player
     public int Level = 0;
     public Weapon CurrentWeapon = null;
     public Location CurrentLocation;
-    public CountedItemList Inventory = new CountedItemList();
+    public Inventory Inventory = new Inventory();
     public List<PlayerQuest> QuestLog = new List<PlayerQuest>();
 
     public Player(string name, int currentHitPoints, int maximumHitPoints, Location currentLocation)
