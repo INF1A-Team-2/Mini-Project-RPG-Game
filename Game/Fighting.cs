@@ -2,9 +2,9 @@ namespace Game;
 
 static class Fighting
 {
-    static bool FightingCurrently;
+    public static bool FightingCurrently;
     
-    public static void InCombat(Player player, Monster monster)
+    public static void InCombat(Monster monster)
     {
         FightingCurrently = true;
 
@@ -17,9 +17,11 @@ static class Fighting
             {
                 case "1":
                     break;
-                case "2": FightingCurrently = false;
+                case "2":
+                    FightingCurrently = false;
                     break;
-                default: FightingCurrently = false;
+                default:
+                    FightingCurrently = false;
                     break;
             }
         }
@@ -28,7 +30,6 @@ static class Fighting
         
     }
 
-
     static void Encounter(Monster monster)
     {
         Player player = Program.Player;
@@ -36,9 +37,9 @@ static class Fighting
         while (true)
         {
             int dealt = World.RandomGenerator.Next(player.CurrentWeapon.MinimumDamage, player.CurrentWeapon.MaximumDamage);
-
-
+            
             monster.CurrentHitPoints -= dealt;
+            
             if (monster.CurrentHitPoints <= 0)
             {
                 Console.WriteLine($"You have defeated the {monster.Name}");
@@ -47,10 +48,12 @@ static class Fighting
                 player.Inventory.Items.AddItem(drop);
                 break;
             }
+            
             Console.WriteLine($"You deal {dealt} damage to the {monster.Name}, they have {monster.CurrentHitPoints} Hp left");
 
             int received = monster.CurrentHitPoints;
             player.CurrentHitPoints -= received;
+            
             if (player.CurrentHitPoints <= 0)
             {
                 Console.WriteLine($"You were defeated by the {monster}, you're dead");
@@ -58,10 +61,6 @@ static class Fighting
             }
             
             Console.WriteLine($"The {monster.Name} deals {received} damage, you have {player.CurrentHitPoints} Hp left ");
-
-
-
-
         }
     }
 }

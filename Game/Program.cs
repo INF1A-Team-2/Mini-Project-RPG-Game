@@ -10,12 +10,18 @@ static class Program
         string name = Console.ReadLine() ?? "Player";
 
         Player = new Player(name, 10, 10, World.LocationByID(World.LOCATION_ID_HOME));
+        Player.CurrentWeapon = World.WeaponByID(World.WEAPON_ID_RUSTY_SWORD);
 
         GameLoop();
     }
 
     public static void GameLoop()
     {
+        if (Player.CurrentHitPoints <= 0)
+        {
+            return;
+        }
+        
         Console.WriteLine("What do you want to do?");
         Console.WriteLine("1: View quest log");
         Console.WriteLine("2: View inventory");
@@ -45,7 +51,7 @@ static class Program
             
             case 3:
                 Movement.DoMovement();
-                Player.CurrentLocation.QuestAvailableHere?.ShowDialog();
+                CheckForQuestsOrMonsters();
                 break;
                 
             case 4:
@@ -57,5 +63,19 @@ static class Program
         }
 
         GameLoop();
+    }
+
+    static void CheckForQuestsOrMonsters()
+    {
+        Location location = Player.CurrentLocation;
+
+        if (location.QuestAvailableHere != null)
+        {
+            location.QuestAvailableHere.ShowDialog();
+        }
+        else if (location.MonsterLivingHere != null)
+        {
+            Fighting.InCombat(location.MonsterLivingHere);
+        }
     }
 }
