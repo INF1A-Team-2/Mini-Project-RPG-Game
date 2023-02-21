@@ -12,6 +12,10 @@ static class Fighting
         {
             Console.WriteLine($"You stand face to face with a {monster.Name}");
             Encounter(monster);
+            if (Program.Player.CurrentHitPoints <= 0)
+            {
+                FightingCurrently = false;
+            }
             Console.WriteLine("Do you wish to continue fighting\n1)yes\n2)no");
             switch (Console.ReadLine())
             {
@@ -42,7 +46,7 @@ static class Fighting
             
             if (monster.CurrentHitPoints <= 0)
             {
-                Console.WriteLine($"You have defeated the {monster.Name}");
+                Console.WriteLine($"You deal {dealt} damage and defeat the {monster.Name}");
                 Item drop = monster.Loot.Items[World.RandomGenerator.Next(0, monster.Loot.Items.Count)].Item;
                 Console.WriteLine($"it dropped {drop.Name}");
                 player.Inventory.Items.AddItem(drop);
@@ -56,7 +60,7 @@ static class Fighting
             
             if (player.CurrentHitPoints <= 0)
             {
-                Console.WriteLine($"You were defeated by the {monster.Name}, you're dead");
+                Console.WriteLine($"You received {received} damage and were defeated by the {monster.Name}, you're dead");
                 break;
             }
             
