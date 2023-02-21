@@ -6,6 +6,7 @@ static class Fighting
     
     public static void InCombat(Monster monster)
     {
+        monster.CurrentHitPoints = monster.MaximumHitPoints;
         FightingCurrently = true;
 
         while (FightingCurrently)
@@ -50,7 +51,7 @@ static class Fighting
                 Console.WriteLine($"\nYou deal {dealt} damage, killing the {monster.Name}");
                 Item drop = monster.Loot.Items[World.RandomGenerator.Next(0, monster.Loot.Items.Count)].Item;
                 Thread.Sleep(1000);
-                Console.WriteLine($"\niTt Dropped a {drop.Name}");
+                Console.WriteLine($"\nIt Dropped a {drop.Name}");
                 player.Inventory.Items.AddItem(drop);
                 break;
             }
