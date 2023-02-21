@@ -11,17 +11,20 @@ class Inventory
         
         foreach (CountedItem countedItem in Items.Items)
         {
-            if (countedItem.Quantity == 1)
-            {
-                Console.WriteLine($"{countedItem.Quantity} {countedItem.Item.Name}");
-            }
+            Console.WriteLine($"{countedItem.Quantity} {(countedItem.Quantity == 1 ? countedItem.Item.Name : countedItem.Item.PluralName)}");
+        }
+    }
 
-            if (countedItem.Quantity >= 1)
+    public bool HasItem(CountedItem item)
+    {
+        foreach (CountedItem countedItem in Items.Items)
+        {
+            if (countedItem.Item.ID == item.Item.ID && countedItem.Quantity == item.Quantity)
             {
-                Console.WriteLine($"{countedItem.Quantity} {countedItem.Item.PluralName}");
+                return true;
             }
-
         }
 
-    }
+        return false;
+    } 
 }
