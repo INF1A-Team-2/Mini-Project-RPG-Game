@@ -16,7 +16,7 @@ static class Fighting
             {
                 FightingCurrently = false;
             }
-            Console.WriteLine("\nDo you wish to continue fighting\n1)yes\n2)no");
+            Console.WriteLine("\nDo you wish to continue fighting\n1)Yes\n2)No");
             switch (Console.ReadLine())
             {
                 case "1":
