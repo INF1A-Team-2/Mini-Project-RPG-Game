@@ -4,6 +4,7 @@ class Monster
 {
     public int ID;
     public string Name;
+    public int MaximumHitPoints;
     public string NamePlural;
     public int MaximumDamage;
     public int RewardExperience;
@@ -22,5 +23,6 @@ class Monster
         this.RewardExperience = rewardExperience;
         this.RewardGold = rewardGold;
         this.CurrentHitPoints = currentHitPoints;
+        this.MaximumHitPoints = currentHitPoints;
     }
 }
