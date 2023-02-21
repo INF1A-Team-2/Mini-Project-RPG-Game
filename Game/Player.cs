@@ -22,11 +22,16 @@ class Player
 
     public void QuestLogViewer()
     {
-        foreach (var quest in QuestLog)
+        foreach (PlayerQuest quest in QuestLog)
         {
+            List<string> items = quest.Quest.QuestCompletionItems.Items
+                .Select(i => $"{i.Quantity}x {(i.Quantity == 1 ? i.Item.Name : i.Item.PluralName)}")
+                .ToList();
+            
             Console.WriteLine($"Quest: {quest.Quest.Name}");
             Console.WriteLine($"Description: {quest.Quest.Description}");
-            Console.WriteLine("Quest completed: " + quest.IsCompleted);
+            Console.WriteLine($"Required items: {string.Join(", ", items)}");
+            Console.WriteLine($"Quest completed: {(quest.IsCompleted ? "Yes" : "No")}");
             Console.WriteLine();
         }
     }

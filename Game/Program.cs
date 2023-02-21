@@ -72,6 +72,13 @@ static class Program
         if (location.QuestAvailableHere != null)
         {
             location.QuestAvailableHere.ShowDialog();
+
+            PlayerQuest? playerQuest = Player.QuestLog.Find(q => q.Quest == location.QuestAvailableHere);
+
+            if (playerQuest == null)
+            {
+                Player.QuestLog.Add(new PlayerQuest(location.QuestAvailableHere));
+            }
         }
         else if (location.MonsterLivingHere != null)
         {
