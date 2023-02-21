@@ -14,10 +14,23 @@ static class Movement
     
     public static bool TryMoveTo(Location newLocation)
     {
-        if (newLocation != null)
+        if (newLocation != null & newLocation.ItemRequiredToEnter == null)
         {
             Program.Player.CurrentLocation = newLocation;
             return true;
+        }
+        if (newLocation != null & newLocation.ItemRequiredToEnter != null)
+        {
+            foreach (CountedItem item in Program.Player.Inventory.Items.Items)
+            {
+                if (item.Item == newLocation.ItemRequiredToEnter)
+                {
+                    Program.Player.CurrentLocation = newLocation;
+                    return true;
+                }
+            }
+            Console.WriteLine("You need a " + newLocation.ItemRequiredToEnter.Name + " to enter this location.");
+            return false;
         }
         return false;
     }
