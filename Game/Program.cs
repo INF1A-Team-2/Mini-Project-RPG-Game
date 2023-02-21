@@ -77,7 +77,36 @@ static class Program
 
             if (playerQuest == null)
             {
-                Player.QuestLog.Add(new PlayerQuest(location.QuestAvailableHere));
+                playerQuest = new PlayerQuest(location.QuestAvailableHere);
+                Player.QuestLog.Add(playerQuest);
+            }
+
+            bool completedQuest = false;
+
+            foreach (CountedItem item in location.QuestAvailableHere.QuestCompletionItems.Items)
+            {
+                if (Player.Inventory.HasItem(item))
+                {
+                    completedQuest = true;
+                }
+            }
+
+            if (completedQuest && !playerQuest.IsCompleted)
+            {
+                Console.WriteLine($"\nYou have completed the quest: {playerQuest.Quest.Name}!");
+                Console.WriteLine("Your reward has been added to your inventory");
+                
+                playerQuest.IsCompleted = true;
+                
+                if (location.QuestAvailableHere.RewardItem != null)
+                {
+                    Player.Inventory.Items.AddItem(location.QuestAvailableHere.RewardItem);
+                }
+
+                if (location.QuestAvailableHere.RewardWeapon != null)
+                {
+                    Player.CurrentWeapon = location.QuestAvailableHere.RewardWeapon;
+                }
             }
         }
         else if (location.MonsterLivingHere != null)
