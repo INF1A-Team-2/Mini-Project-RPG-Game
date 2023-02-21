@@ -6,11 +6,12 @@ static class Fighting
     
     public static void InCombat(Monster monster)
     {
-        monster.CurrentHitPoints = monster.MaximumHitPoints;
         FightingCurrently = true;
 
         while (FightingCurrently)
         {
+            monster.CurrentHitPoints = monster.MaximumHitPoints;
+            Program.Player.CurrentHitPoints = 10;
             Console.WriteLine($"\nYou stand face to face with a {monster.Name}");
             Encounter(monster);
             if (Program.Player.CurrentHitPoints <= 0)
