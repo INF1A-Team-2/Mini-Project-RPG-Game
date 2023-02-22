@@ -4,13 +4,15 @@ class Monster
 {
     public int ID;
     public string Name;
+    public int MaximumHitPoints;
     public string NamePlural;
     public int MaximumDamage;
     public int RewardExperience;
     public int RewardGold;
     public CountedItemList Loot = new CountedItemList();
     public int CurrentHitPoints;
-    public int MaximumHitPoints;
+  
+  
 
     public Monster(int id, string name, string namePlural, int maximumDamage, int rewardExperience, int rewardGold, int currentHitPoints, int maximumHitPoints)
     {
@@ -21,6 +23,6 @@ class Monster
         this.RewardExperience = rewardExperience;
         this.RewardGold = rewardGold;
         this.CurrentHitPoints = currentHitPoints;
-        this.MaximumHitPoints = maximumHitPoints;
+        this.MaximumHitPoints = currentHitPoints;
     }
 }

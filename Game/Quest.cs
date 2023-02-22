@@ -26,4 +26,9 @@ class Quest
         this.RewardItem = rewardItem;
         this.RewardWeapon = rewardWeapon;
     }
+    
+    public void ShowDialog()
+    {
+        Console.WriteLine($"There is a quest available: {Name}\n{Description}");
+    }
 }
